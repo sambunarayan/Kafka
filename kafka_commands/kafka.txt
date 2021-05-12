@@ -1,0 +1,14 @@
+・topic作成
+docker-compose -f docker-compose.yml exec broker kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic <topic name>
+
+・topic list
+docker exec -it zookeeper bash
+kafka-topics --list --zookeeper localhost:2181
+
+・message 確認
+docker exec -it broker bash
+kafka-console-consumer --topic <topic name> --from-beginning --bootstrap-server localhost:9092
+
+・Topic削除
+docker exec -it zookeeper bash
+kafka-topics --delete --zookeeper localhost:2181 --topic <topic name>
