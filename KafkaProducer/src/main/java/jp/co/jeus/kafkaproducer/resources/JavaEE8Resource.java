@@ -14,7 +14,7 @@ import org.apache.kafka.clients.producer.RecordMetadata;
  *
  * @author
  */
-@Path("javaee8")
+@Path("topic")
 public class JavaEE8Resource {
 
     @GET
